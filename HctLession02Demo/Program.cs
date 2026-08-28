@@ -1,4 +1,4 @@
-namespace TVCLession02HoangCongTien
+namespace HctLession02Demo
 {
     public class Program
     {

@@ -1,6 +1,6 @@
-﻿namespace TVCLession02HoangCongTien.Models
+﻿namespace HctLession02Demo.Models
 {
-    public class TvcProduct
+    public class HctProduct
     {
         public string ProductId { get; set; }
         public string ProductName { get; set; }

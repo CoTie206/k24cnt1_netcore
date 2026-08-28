@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TVCLession02HoangCongTien.Models;
+using HctLession02Demo.Models;
 
-namespace TVCLession02HoangCongTien.Controllers
+namespace HctLession02Demo.Controllers
 {
-    public class TvcProductController : Controller
+    public class HctProductController : Controller
     {
         public IActionResult Index()
         {
@@ -19,15 +19,15 @@ namespace TVCLession02HoangCongTien.Controllers
         public IActionResult GetProduct()
         {
             //Mock data
-            TvcProduct tvcProduct = new TvcProduct()
+            HctProduct hctProduct = new HctProduct()
             {
                 ProductId="P001",
                 ProductName="Laptop Dell Vostro",
                 YearRelease=2024,
                 Price=12000000,
             };
-            ViewData["productVD"] = tvcProduct;
-            ViewBag.productVB = tvcProduct;
+            ViewData["productVD"] = hctProduct;
+            ViewBag.productVB = hctProduct;
             return View();
         }
     }
