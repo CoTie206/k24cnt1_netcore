@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+	ViewData["Title"] = "Danh sách sản phẩm";
+	var products = ViewData["products"] as List<HctLession03.Models.HctProduct>;
+	int stt = 0;
+}
+<div class="card">
+	<div class="card-header">
+		<h1>@ViewData["Title"]</h1>
+    </div>
+	<div class="card-body">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Year</th>
+					<th>Price</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach(HctProduct item in products)
+				{
+					stt++;
+					<tr>
+						<td>@stt</td>
+						<td>@item.HctProductId</td>
+						<td>@item.HctProductName</td>
+						<td>@item.HctYearRelease</td>
+						<td>@item.HctPrice</td>
+						<td>
+							<a href="#">Xem</a>
+							<a href="#">Sửa</a>
+							<a href="#">Xóa</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+			<tfoot>
+				<tr>
+					<th colpan="6">Tổng số sản phẩm: @products.Count</th>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+</div>
