@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Thông tin member";
+    var member = ViewBag.Member;
+}
+
+<div class="alert alert-info">
+    <h1>@ViewData["Title"]</h1>
+
+    <p>Member id: @member.HctMemberId</p>
+    <p>Username: @member.HctUserName</p>
+    <p>Password: @member.HctPassword</p>
+    <p>Full name: @member.HctFullName</p>
+    <p>Email: @member.HctEmail</p>
+</div>

@@ -1,0 +1,31 @@
+@* Empty Razor view generated for GetMembers *@
+@{
+	ViewData["Title"] = "Danh sách thành viên";
+	int num = 0;
+}
+<div class="card">
+	<h1>@ViewData["Title"]</h1>
+	<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>#No.</th>
+			<th>Member Id</th>
+			<th>Username</th>
+			<th>Full Name</th>
+			<th>Email</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var member in ViewBag.Members)
+		{
+				num++;
+			<tr>
+				<td>@num</td>
+				<td>@member.HctMemberId</td>
+				<td>@member.HctUserName</td>
+				<td>@member.HctFullName</td>
+				<td>@member.HctEmail</td>
+			</tr>
+		}
+	</tbody>
+</div>

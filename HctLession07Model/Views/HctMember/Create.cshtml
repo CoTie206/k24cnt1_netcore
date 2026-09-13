@@ -1,0 +1,44 @@
+@model HctLession07Model.Models.DataModels.HctMember
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="card p-3">
+    <h1>Thêm mới thành viên</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create" method="post" asp-controller="HctMember">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="HctUserName" class="control-label"></label>
+                    <input asp-for="HctUserName" class="form-control" />
+                    <span asp-validation-for="HctUserName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="HctPassword" class="control-label"></label>
+                    <input asp-for="HctPassword" class="form-control" />
+                    <span asp-validation-for="HctPassword" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="HctFullName" class="control-label"></label>
+                    <input asp-for="HctFullName" class="form-control" />
+                    <span asp-validation-for="HctFullName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="HctEmail" class="control-label"></label>
+                    <input asp-for="HctEmail" class="form-control" />
+                    <span asp-validation-for="HctEmail" class="text-danger"></span>
+                </div>
+                <div class="form-group  my-2">
+					<input type="submit" value="Lưu lại" class="btn btn-primary" />
+                    <a asp-action="Index" class="btn btn-secondary">Quay lại List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
