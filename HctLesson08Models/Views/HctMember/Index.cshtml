@@ -1,0 +1,63 @@
+﻿@model IEnumerable<HctLesson08Models.Models.HctMember>
+
+@{
+    ViewData["Title"] = "Danh sách thành viên";
+}
+
+<div class="card p-3">
+    <div class="card-header">
+        <h1>@ViewData["Title"]</h1> 
+        <a asp-action="HctCreate">Thêm  mới</a>
+    </div>
+
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.HctMemberId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.HctUserName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.HctPassword)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.HctFullName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.HctEmail)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HctMemberId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HctUserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HctPassword)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HctFullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HctEmail)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Sửa", "HctEdit", new {  id=item.HctMemberId }) |
+                        @Html.ActionLink("Xem chi tiết", "HctDetails", new { id = item.HctMemberId }) |
+                            @Html.ActionLink("Xóa", "HctDelete", new { id = item.HctMemberId })
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
