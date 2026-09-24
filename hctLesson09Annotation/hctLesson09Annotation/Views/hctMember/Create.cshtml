@@ -1,0 +1,60 @@
+﻿@model hctLesson09Annotation.Models.DataViewModels.hctMemberRegister
+@{
+    ViewData["Title"] = "Create New Member";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Thông tin thành viên</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="hctUserName" class="control-label"></label>
+                <input asp-for="hctUserName" class="form-control" />
+                <span asp-validation-for="hctUserName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="hctPassword" class="control-label"></label>
+                <input asp-for="hctPassword" type="password" class="form-control" />
+                <span asp-validation-for="hctPassword" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="hctEmail" class="control-label"></label>
+                <input asp-for="hctEmail" class="form-control" />
+                <span asp-validation-for="hctEmail" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="hctPhoneNumber" class="control-label"></label>
+                <input asp-for="hctPhoneNumber" class="form-control" />
+                <span asp-validation-for="hctPhoneNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="hctFullName" class="control-label"></label>
+                <input asp-for="hctFullName" class="form-control" />
+                <span asp-validation-for="hctFullName" class="text-danger"></span>
+            </div>
+
+             <div class="form-group mb-3">
+                <label asp-for="hctBirthday" class="control-label"></label>
+                <input asp-for="hctBirthday" class="form-control" />
+                <span asp-validation-for="hctBirthday" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

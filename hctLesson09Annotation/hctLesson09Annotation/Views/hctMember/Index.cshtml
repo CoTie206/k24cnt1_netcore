@@ -1,0 +1,64 @@
+@model IEnumerable<hctLesson09Annotation.Models.DataModel.hctMember>
+@{
+    ViewData["Title"] = "Danh sách sinh viên";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.hctUserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hctPassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hctEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hctPhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hctFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hctBirthday)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.hctUserName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.hctPassword)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.hctEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.hctPhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.hctFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.hctBirthday)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.hctMemberId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.hctMemberId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.hctMemberId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
