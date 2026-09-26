@@ -1,5 +1,4 @@
--- Script bổ sung theo entity và cấu hình EF của bài học sau khi đổi tên.
--- Chạy trong SQL Server Management Studio trên server của anh.
+
 
 USE [master];
 GO
@@ -29,7 +28,6 @@ BEGIN
 END;
 GO
 
--- Bản ghi minh họa; email là địa chỉ mẫu, mật khẩu và điện thoại để trống.
 IF NOT EXISTS (SELECT 1 FROM [dbo].[HctMember] WHERE [HctUserName] = 'hctien')
 BEGIN
     INSERT INTO [dbo].[HctMember]
