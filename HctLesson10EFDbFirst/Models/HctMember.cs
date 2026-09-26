@@ -7,15 +7,15 @@ public partial class HctMember
 {
     public long Id { get; set; }
 
-    public string? HctUserName { get; set; }
+    public string HctName { get; set; } = null!;
 
-    public string? HctPassword { get; set; }
+    public bool? HctGender { get; set; }
 
-    public string? HctFullName { get; set; }
+    public DateTime? HctBirthDay { get; set; }
 
     public string? HctEmail { get; set; }
 
     public string? HctPhone { get; set; }
 
-    public bool? HctStatus { get; set; }
+    public bool HctActive { get; set; }
 }
