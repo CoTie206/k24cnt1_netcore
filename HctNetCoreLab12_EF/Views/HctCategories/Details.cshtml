@@ -1,0 +1,45 @@
+@model HctNetCoreLab12_EF.Models.HctCategory
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>HctCategory</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">                       
+            @Html.DisplayNameFor(model => model.HctName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HctName)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.HctStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HctStatus)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.HctCreatedDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HctCreatedDate)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.HctProducts)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HctProducts)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.HctID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

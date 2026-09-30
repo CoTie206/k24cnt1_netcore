@@ -1,0 +1,36 @@
+@model HctNetCoreLab12_EF.Models.HctCategory
+
+@{
+    ViewData["Title"] = "Chỉnh sửa danh mục";
+}
+
+<h1>Chỉnh sửa danh mục</h1>
+
+<h4>HctCategory</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="HctID" />
+            <div class="form-group">
+                <label asp-for="HctName" class="control-label"></label>
+                <input asp-for="HctName" class="form-control" />
+                <span asp-validation-for="HctName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HctStatus" class="control-label"></label>
+                <input asp-for="HctStatus" class="form-control" />
+                <span asp-validation-for="HctStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Cập nhật" class="btn btn-sm btn btn-success" />
+                <a class="btn btn-sm btn-danger" asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
